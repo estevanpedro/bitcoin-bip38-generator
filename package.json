@@ -1,0 +1,19 @@
+{
+  "name": "estevan",
+  "version": "1.0.0",
+  "description": "Meu primeiro node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Estevan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bip38": "^3.0.0",
+    "bitcoinjs-lib": "^5.1.7",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "wif": "^2.0.6"
+  }
+}
