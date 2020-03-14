@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000
 var bitcoin = require("bitcoinjs-lib");
 var bip38 = require('bip38');
 var wif = require('wif');
@@ -37,6 +38,6 @@ app.post('/paperwallet', async (req, res) => {
     }
 });
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
  console.log("Server running on port 8080");
 });
