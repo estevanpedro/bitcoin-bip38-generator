@@ -15,8 +15,8 @@ app.post('/paperwallet', async (req, res) => {
 
         //Create new Public Key and private Key
         let testnet = bitcoin.networks.testnet;
-        var keyPair = bitcoin.ECPair.makeRandom(testnet);
-        const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
+        var keyPair = bitcoin.ECPair.makeRandom({ network: testnet});
+        const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey, network: bitcoin.networks.testnet });
         const privateKey = keyPair.toWIF();
         
         // Transform private Key into bip38
@@ -34,7 +34,10 @@ app.post('/paperwallet', async (req, res) => {
         });
 
     } catch (err) {
-        return res.status(200).send({error: 'Create new wallet Error'});
+        return res.status(200).send(
+            {
+            error: 'Create new wallet Error"',
+            message: 'Check out if the payload is called "key"'});
     }
 });
 
